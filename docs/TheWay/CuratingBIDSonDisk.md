@@ -27,6 +27,8 @@ on each clustess [instructions for CUBIC]() and
 for the rest of the steps in this workflow. To do so, create a conda
 environment.
 
+<!-- TODO What to do when you've already got a conda env setup -->
+
 If you've already got `conda` setup for environment management, please skip this
 step and instead directly download `CuBIDS` [here](https://bids-bond.readthedocs.io/en/latest/). After that, you can head over to _Stage 0_.
 

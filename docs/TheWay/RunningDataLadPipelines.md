@@ -80,6 +80,9 @@ Different bootstrap scripts require different argmuents. For BIDSApps, the argum
   2. The path to the container dataset you created in the previous step.
 
 ---
+**ADD INFO ABOUT CLONING AND CREDENTIAL SETTING HERE**
+
+---
 **NOTE:** Both arguments must be *absolute paths* and *cannot contain a trailing /*.
 
 ---

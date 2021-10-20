@@ -472,6 +472,57 @@ fmriprep-audit
 └── output_ria
 ```
 
+## Something Went Wrong in BIDS
+
+Let's say you've audited your bootstrap and notice something went wrong — e.g. two or
+three subjects have unusable BOLD data — and now you have to
+adjust your BIDS data to fix it. You go back to your BIDS and make some adjustments, saving
+them in datalad as before, but how does your bootstrap know to re-run the data with
+the newly updated BIDS?
+
+*The easiest way to solve this problem is to burn down your `testing` directory and start again from
+the top of this page* — this is especially recommended if you're new to this process and only have
+a handful of bootstraps to run. But if you're _not_ interested and want to keep
+your work, there is a way to re-run
+only the _adjusted_ BIDS participants that adheres to the bootstrap workflow:
+
+1. Adjust your BIDS data and `datalad save` it; you should be familiar with this.
+
+2. Now, head to the `analysis` directory of your bootstrap:
+
+```shell
+.
+├── bootstrap-fmriprep.sh
+├── fmriprep                         
+│   ├── analysis                # go here
+│   ├── input_ria
+│   ├── merge_ds
+│   ├── output_ria
+│   └── pennlinc-containers
+└── fmriprep-container
+```
+
+3. Now, tell datalad to fetch any updates to the input directory (inputs being your BIDS)
+
+```shell
+datalad update -r --merge TRUE -s input ./inputs/data
+```
+
+The `r` means, `recursive`, and the `s` specifies which remote location to update from (`input`), while
+the `merge` strategy is a necessary check to make sure changes can be combines smoothly. Lastly,
+`./inputs/data` specifies the path to the specific BIDS data subdirectory you need updated.
+
+4. Finally, push these changes to the rest of the bootstrap datalad remotes:
+
+```shell
+
+datalad push --to input
+datalad push --to output
+```
+
+Now, if you run the handful of subjects (by finding that subject's line in `analysis/code/qsub_calls.sh`
+and simply copy-pasting it into the terminal), their BIDS inputs remote should be updated with your changes.
+
 # Running a bootstrap on the outputs of another bootstrap
 
 Suppose you want to extract a specific file from each subject's output

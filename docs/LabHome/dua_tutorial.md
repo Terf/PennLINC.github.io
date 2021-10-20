@@ -131,4 +131,20 @@ Select **No** for the question and you can click on **submit**.
 
 ## Step 8: Wait for approval from the Office of Research Services
 
-Just relax and wait for a final approval email to pop up in your inbox. Email the completed data use agreement to the [NDA Help Desk](NDAHelp@mail.nih.gov) and you will soon be able to feast on the data 🎉
+Just relax and wait for a final approval email to pop up in your inbox. The subject line would read like `MTA/NMA (58028/00): Request fully executed`.
+
+## Step 9: Contact the Lead Recipient 
+
+Per the new NDA policy, The only way to properly submit a DUC is for the Lead Recipient to upload the document to the appropriate DAR on their Data Permissions dashboard (https://nda.nih.gov/user/dashboard/data_permissions.html). 
+
+Now you should contact the Lead Recipient for the DUC to execute the following steps:
+
++ visit the Data Permissions dashboard (https://nda.nih.gov/user/dashboard/data_permissions.html)
+
++ click 'Reapply for Access' under the 'Actions' dropdown for the Data access request
+
++ locate the updated DUC file
+
++ upload the DUC to Data Access Request.
+
+Once the Lead Recipient receives final approval on the DUC, you will be able to feast on the data 🎉

@@ -502,22 +502,19 @@ only the _adjusted_ BIDS participants that adheres to the bootstrap workflow:
 └── fmriprep-container
 ```
 
-3. Now, tell datalad to fetch any updates to the input directory (inputs being your BIDS)
+3. Now, tell datalad to uninstall the input directory (inputs being your BIDS)
 
 ```shell
-datalad update -r --merge TRUE -s input ./inputs/data
+datalad remove -d . inputs/data
 ```
 
-The `r` means, `recursive`, and the `s` specifies which remote location to update from (`input`), while
-the `merge` strategy is a necessary check to make sure changes can be combines smoothly. Lastly,
-`./inputs/data` specifies the path to the specific BIDS data subdirectory you need updated.
+This will make sure your data is cleanly removed.
 
-4. Finally, push these changes to the rest of the bootstrap datalad remotes:
+4. Re-clone the data and push this update:
 
 ```shell
-
+datalad clone -d . ${BIDSINPUT} inputs/data
 datalad push --to input
-datalad push --to output
 ```
 
 Now, if you run the handful of subjects (by finding that subject's line in `analysis/code/qsub_calls.sh`

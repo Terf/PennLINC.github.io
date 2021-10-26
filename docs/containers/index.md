@@ -27,17 +27,17 @@ Docker images are available on dockerhub. You can choose any of these images and
 ```console
 $  singularity \
 >  build \
->  dsi-studio-docker-latest.sif \
->  docker://manishka/dsi-studio-docker:latest
+>  dsistudio_latest.sif \
+>  docker://dsistudio/dsistudio:latest
 ```
 
 ## Running a singularity container
 
-The previous section produces a file called ``dsi-studio-docker-latest.sif``. We can do lots of things with this image. We can enter the image and access a shell:
+The previous section produces a file called ``dsistudio_latest.sif``. We can do lots of things with this image. We can enter the image and access a shell:
 
 ```console
-$ /share/apps/singularity/2.5.1/bin/singularity shell dsi-studio-docker-latest.sif
-Singularity dsi-studio-docker-latest.sif:~> cat /etc/os-release
+$ /share/apps/singularity/2.5.1/bin/singularity shell dsistudio_latest.sif
+Singularity dsistudio_latest.sif:~> cat /etc/os-release
 PRETTY_NAME="Debian GNU/Linux 8 (jessie)"
 NAME="Debian GNU/Linux"
 VERSION_ID="8"

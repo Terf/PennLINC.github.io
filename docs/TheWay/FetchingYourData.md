@@ -144,6 +144,7 @@ aws_session_token = AQoDYXdzEPX//////////wEaoAKf5O7+2FhbYIqed/oh69l6FuVuaxpanNbA
 
 
 4. Check whether you have the datalad special remote enabled
+
 ```
 
 git annex info | grep datalad

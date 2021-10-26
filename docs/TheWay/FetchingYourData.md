@@ -132,6 +132,8 @@ expirationDate=Tue Nov 18 03:14:16 EST 2014
 
 3. Export the AWS S3 credentials
 Navigate to `~/.aws/credentials` and paste in the information as below:
+
+
 ```
 [NDAR]
 aws_access_key_id = ASIAJ3GPA2W73EXAMPLE
@@ -143,23 +145,29 @@ aws_session_token = AQoDYXdzEPX//////////wEaoAKf5O7+2FhbYIqed/oh69l6FuVuaxpanNbA
 
 4. Check whether you have the datalad special remote enabled
 ```
-# this command will return a hyphen-separated string if a remote is enabled
+
 git annex info | grep datalad
 ```
+
 If not enabled (that is, no string returned), run the `git annex initremote` command. 
 Don't forget to give the remote a name (it is `datalad` here). The following command will configure datalad as a special remote for the annexed contents in the dataset.
+
 ```
-# this command will return a hyphen-separated string if a remote is enabled
 git annex initremote datalad type=external externaltype=datalad encryption=none
 
 ```
+
 5. Create your datalad dataset in the desired directory
+
+
 ```
-# mydataset is the name you want to give to the datalad dataset
+
 datalad create mydataset
 cd mydataset
 ```
+
 Take HCP-D as an example, you will run:
+
 ```
 datalad create HCP-D
 cd HCP-D
@@ -168,7 +176,9 @@ cd HCP-D
 6. Run datalad addurls command
 It would be helpful to first go over the [documentation](http://docs.datalad.org/en/stable/generated/man/datalad-addurls.html) to have the command tailored to your needs. 
 Take HCP-D as an example, you will run:
+
 ```
 datalad addurls hcpd_3.csv '{associated_file}' '{filename}'
 ```
+
 where `{associated_file}` refers to the `associated_file` column in `hcpd_s3.csv` and `{filename}` refers to the `filename` column in `hcpd_s3.csv`. 
